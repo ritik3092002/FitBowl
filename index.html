@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FitBowl — Healthy bowls that taste like a treat | Mumbai</title>
+  <meta name="description" content="Fresh lunch and dinner bowls delivered in Andheri, Bandra, Powai and Lower Parel. Your first meal is free — no card needed.">
+  <meta name="theme-color" content="#E8452C">
+
+  <!-- Social preview (most traffic comes from Instagram) -->
+  <meta property="og:title" content="FitBowl — your first bowl is on us">
+  <meta property="og:description" content="Healthy bowls that actually taste good. Delivered to your home or office in Mumbai.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23E8452C'/><path d='M22 48h56a28 28 0 0 1-56 0z' fill='%23FFF6E9'/></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#book">Skip to free trial booking</a>
+
+  <!-- ============ ANIMATED BACKGROUND STICKERS (decorative) ============
+       Each sticker is positioned with CSS variables:
+       --x / --y = position, --s = size, --d = speed, --delay = start offset.
+       Animation types: float, spin, wobble, bounce -->
+  <div class="bg-stickers" aria-hidden="true">
+    <span class="bg-sticker float"  style="--x:6%;  --y:12%; --s:44px; --d:7s;  --delay:0s">🥗</span>
+    <span class="bg-sticker spin"   style="--x:88%; --y:9%;  --s:38px; --d:18s; --delay:-3s">🌶️</span>
+    <span class="bg-sticker wobble" style="--x:14%; --y:34%; --s:36px; --d:5s;  --delay:-1s">🥑</span>
+    <span class="bg-sticker bounce" style="--x:92%; --y:30%; --s:42px; --d:4s;  --delay:-2s">🍅</span>
+    <span class="bg-sticker float"  style="--x:4%;  --y:56%; --s:40px; --d:8s;  --delay:-4s">🥕</span>
+    <span class="bg-sticker spin"   style="--x:84%; --y:52%; --s:34px; --d:20s; --delay:-6s">🍋</span>
+    <span class="bg-sticker bounce" style="--x:10%; --y:78%; --s:42px; --d:4.5s;--delay:-1.5s">🍚</span>
+    <span class="bg-sticker wobble" style="--x:90%; --y:74%; --s:40px; --d:5.5s;--delay:-2.5s">🥦</span>
+    <span class="bg-sticker float"  style="--x:48%; --y:90%; --s:36px; --d:9s;  --delay:-5s">🍗</span>
+    <span class="bg-sticker float"  style="--x:52%; --y:4%;  --s:32px; --d:6.5s;--delay:-2s">🌿</span>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="FitBowl home">
+        <span class="logo-mark" aria-hidden="true"></span>FitBowl
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="#menu">Menu</a>
+        <a href="#plans">Plans</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#book" class="btn btn-small" data-cta="header">Free meal</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh bowls · Mumbai</p>
+          <h1>Healthy food that <span class="highlight">doesn't taste</span> like punishment.</h1>
+          <p class="hero-sub">Butter chicken, biryani, Korean chicken — made lighter, cooked the same morning and delivered to your desk or door. Your first bowl is free.</p>
+
+          <div class="hero-actions">
+            <a href="#book" class="btn btn-big" data-cta="hero">Get my free bowl</a>
+            <a href="#menu" class="btn-link">See this week's menu →</a>
+          </div>
+
+          <ul class="trust-row" aria-label="Why it's risk-free">
+            <li>✓ No card needed</li>
+            <li>✓ Free delivery</li>
+            <li>✓ Pause anytime</li>
+          </ul>
+
+          <p class="area-line">
+            Delivering now in <strong>Andheri, Bandra, Powai &amp; Lower Parel</strong>.
+            <a href="#book" data-area-other>Somewhere else?</a>
+          </p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-bowl" id="heroBowl"></div>
+          <div class="sticker sticker-a">Up to 40g<br><small>protein</small></div>
+          <div class="sticker sticker-b">No maida.<br>No refined sugar.</div>
+          <!-- New animated stickers -->
+          <div class="sticker sticker-c">🔥 <span>Fresh<br>today</span></div>
+          <div class="sticker sticker-d">⭐ <span>4.8<br><small>rated</small></span></div>
+          <div class="sticker sticker-round sticker-e">🌱<small>100%<br>fresh</small></div>
+          <span class="emoji-pop pop-1">🥬</span>
+          <span class="emoji-pop pop-2">🍅</span>
+          <span class="emoji-pop pop-3">🌶️</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how" aria-labelledby="how-title">
+      <div class="container">
+        <h2 id="how-title" class="visually-hidden">How it works</h2>
+        <ol class="steps">
+          <li><span class="step-num">1</span><div><strong>Pick a free bowl</strong><p>Tell us when and where. Takes 30 seconds.</p></div></li>
+          <li><span class="step-num">2</span><div><strong>We call to confirm</strong><p>A real person, not a bot. Then it's on its way.</p></div></li>
+          <li><span class="step-num">3</span><div><strong>Eat. Then decide.</strong><p>Like it? Choose a plan. Didn't? No hard feelings.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section id="menu" class="section menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">This week's menu</p>
+          <h2 id="menu-title">14 bowls. Zero boring.</h2>
+          <p class="section-sub">Every bowl shows calories and protein, so you always know what you're eating. The menu changes every Monday.</p>
+        </div>
+
+        <div class="menu-controls" role="group" aria-label="Filter menu">
+          <div class="chip-group" role="radiogroup" aria-label="Diet">
+            <button class="chip is-active" data-filter="all" role="radio" aria-checked="true">All</button>
+            <button class="chip" data-filter="veg" role="radio" aria-checked="false"><span class="dot dot-veg"></span>Veg</button>
+            <button class="chip" data-filter="nonveg" role="radio" aria-checked="false"><span class="dot dot-nonveg"></span>Non-veg</button>
+          </div>
+          <label class="sort">
+            <span>Sort</span>
+            <select id="menuSort">
+              <option value="default">Chef's order</option>
+              <option value="protein">Most protein</option>
+              <option value="calories">Lowest calories</option>
+            </select>
+          </label>
+        </div>
+
+        <ul class="menu-grid" id="menuGrid" aria-live="polite"></ul>
+        <div class="menu-more-wrap"><button type="button" class="btn btn-outline" id="menuMore">Show all 14 bowls</button></div>
+
+        <p class="menu-note">🕛 Lunch 12–2 pm &nbsp;·&nbsp; 🌙 Dinner 7–9 pm &nbsp;·&nbsp; Monday to Saturday</p>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section id="reviews" class="section reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">From people who were sceptical too</p>
+          <h2 id="reviews-title">What our regulars say</h2>
+        </div>
+
+        <div class="review-feature">
+          <blockquote>
+            <p class="big-quote">“I've lost 6 kg in 2 months without feeling like I'm on a diet.”</p>
+            <details class="more-quote">
+              <summary>Read Karan's full review</summary>
+              <p>“Lunch at work used to be samosas and chai, now I actually look forward to my FitBowl. The Korean Chicken Bowl is my favourite but honestly the Rajma Chawal Remix tastes just like home. Delivery has been on time almost every single day, except once during the heavy rains in July, and even then they called me in advance. My whole team has started ordering now.”</p>
+            </details>
+            <footer><span class="avatar" aria-hidden="true">K</span><span><strong>Karan, 31</strong> · Powai</span></footer>
+          </blockquote>
+        </div>
+
+        <ul class="review-list">
+          <li class="review">
+            <p>“Finally healthy food that doesn't taste like cardboard!”</p>
+            <span class="who"><span class="avatar" aria-hidden="true">R</span><strong>Riya, 27</strong> · Andheri</span>
+          </li>
+          <li class="review">
+            <p>“The protein numbers help me plan my gym days. 10/10.”</p>
+            <span class="who"><span class="avatar" aria-hidden="true">A</span><strong>Arjun, 34</strong> · Lower Parel</span>
+          </li>
+          <li class="review">
+            <p>“Good food, on time.”</p>
+            <span class="who"><span class="avatar" aria-hidden="true">S</span><strong>Sneha, 29</strong> · Bandra</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PLANS ============ -->
+    <section id="plans" class="section plans" aria-labelledby="plans-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Plans &amp; pricing</p>
+          <h2 id="plans-title">Less than a delivery app. Way better than one.</h2>
+          <p class="section-sub">Every plan: free delivery, pause or cancel anytime, pick your meals every week. Start with a free bowl — you choose a plan only if you love it.</p>
+        </div>
+
+        <div class="plan-grid">
+          <article class="plan">
+            <h3>Starter</h3>
+            <p class="plan-meals">5 meals / month</p>
+            <p class="plan-price">₹290<span>/meal</span></p>
+            <p class="plan-total">₹1,450 a month</p>
+            <p class="plan-fit">Good for: trying a few lunches a month</p>
+            <a href="#book" class="btn btn-outline" data-plan="Starter">Start with a free bowl</a>
+          </article>
+
+          <article class="plan plan-popular">
+            <span class="badge">Most popular</span>
+            <h3>Regular</h3>
+            <p class="plan-meals">10 meals / month</p>
+            <p class="plan-price">₹270<span>/meal</span></p>
+            <p class="plan-total">₹2,700 a month · <strong>save ₹200</strong></p>
+            <p class="plan-fit">Good for: weekday lunches, 2–3 times a week</p>
+            <a href="#book" class="btn" data-plan="Regular">Start with a free bowl</a>
+          </article>
+
+          <article class="plan">
+            <h3>Pro</h3>
+            <p class="plan-meals">20 meals / month</p>
+            <p class="plan-price">₹250<span>/meal</span></p>
+            <p class="plan-total">₹5,000 a month · <strong>save ₹800</strong></p>
+            <p class="plan-fit">Good for: lunch every workday, sorted</p>
+            <a href="#book" class="btn btn-outline" data-plan="Pro">Start with a free bowl</a>
+          </article>
+        </div>
+        <p class="plan-footnote">Savings compared with buying the same number of meals at the Starter price.</p>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section id="book" class="section book" aria-labelledby="book-title">
+      <div class="container book-inner">
+        <div class="book-copy">
+          <p class="eyebrow">Free trial meal</p>
+          <h2 id="book-title">Your first bowl is on us.</h2>
+          <ul class="tick-list">
+            <li>One full meal, completely free</li>
+            <li>No card, no payment, no catch</li>
+            <li>Our team calls you to confirm the delivery</li>
+          </ul>
+        </div>
+
+        <div class="form-card">
+          <form id="trialForm" novalidate>
+            <div id="chosenBowl" class="chosen-bowl" hidden></div>
+
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Riya Shah" required>
+              <p class="error" id="name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Mobile number</label>
+              <div class="phone-wrap">
+                <span class="prefix" aria-hidden="true">+91</span>
+                <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="98765 43210" maxlength="20" required aria-describedby="phone-hint phone-error">
+              </div>
+              <p class="hint" id="phone-hint">We'll call this number to confirm your delivery.</p>
+              <p class="error" id="phone-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="area">Delivery area</label>
+              <select id="area" name="area" required>
+                <option value="">Select your area</option>
+                <option>Andheri</option>
+                <option>Bandra</option>
+                <option>Powai</option>
+                <option>Lower Parel</option>
+                <option value="other">Somewhere else in Mumbai</option>
+              </select>
+              <p class="error" id="area-error" aria-live="polite"></p>
+            </div>
+
+            <!-- Shown only when "Somewhere else" is chosen -->
+            <div class="field waitlist-box" id="waitlistBox" hidden>
+              <p class="waitlist-msg">We're not there <em>yet</em> — but we're expanding soon. Tell us where you are and you'll be the first to get a free bowl when we arrive.</p>
+              <label for="otherArea">Your area or pincode</label>
+              <input id="otherArea" name="otherArea" type="text" placeholder="e.g. Goregaon, 400063">
+              <p class="error" id="otherArea-error" aria-live="polite"></p>
+            </div>
+
+            <fieldset class="field">
+              <legend>I eat</legend>
+              <div class="toggle">
+                <input type="radio" id="diet-veg" name="diet" value="Veg">
+                <label for="diet-veg"><span class="dot dot-veg"></span>Veg</label>
+                <input type="radio" id="diet-nonveg" name="diet" value="Non-veg">
+                <label for="diet-nonveg"><span class="dot dot-nonveg"></span>Non-veg</label>
+              </div>
+              <p class="error" id="diet-error" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="trial-only">
+              <div class="field">
+                <label for="date">Preferred date</label>
+                <input id="date" name="date" type="date" required>
+                <p class="hint" id="date-hint">Monday to Saturday. Earliest is tomorrow — we cook every bowl fresh that morning.</p>
+                <p class="error" id="date-error" aria-live="polite"></p>
+              </div>
+
+              <fieldset class="field">
+                <legend>Lunch or dinner?</legend>
+                <div class="toggle">
+                  <input type="radio" id="slot-lunch" name="slot" value="Lunch (12–2 pm)" checked>
+                  <label for="slot-lunch">Lunch · 12–2</label>
+                  <input type="radio" id="slot-dinner" name="slot" value="Dinner (7–9 pm)">
+                  <label for="slot-dinner">Dinner · 7–9</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <input type="hidden" id="bowl" name="bowl">
+
+            <button type="submit" class="btn btn-big btn-block" id="submitBtn">
+              <span class="btn-label">Book my free bowl</span>
+            </button>
+            <p class="form-foot">No spam. We only use your number to arrange your meal.</p>
+          </form>
+
+          <!-- Phone confirmation step (number must be correct) -->
+          <div id="confirmStep" class="confirm-step" hidden>
+            <p class="confirm-title">Quick check — is this right?</p>
+            <p class="confirm-number" id="confirmNumber"></p>
+            <p class="hint">Our team will call this number to confirm your bowl.</p>
+            <div class="confirm-actions">
+              <button type="button" class="btn btn-big btn-block" id="confirmYes">Yes, that's my number</button>
+              <button type="button" class="btn-link" id="confirmEdit">No, let me fix it</button>
+            </div>
+          </div>
+
+          <!-- Success -->
+          <div id="successState" class="success" hidden tabindex="-1">
+            <div class="success-icon" aria-hidden="true">🎉</div>
+            <h3 id="successTitle">You're in!</h3>
+            <p id="successText"></p>
+            <ul class="summary" id="successSummary"></ul>
+            <a class="btn btn-outline btn-block" id="shareBtn" target="_blank" rel="noopener">Tell a colleague on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section faq" aria-labelledby="faq-title">
+      <div class="container narrow">
+        <div class="section-head">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title">Good to know</h2>
+        </div>
+        <div class="faq-list">
+          <details open><summary>Is the trial meal really free?</summary><p>Yes. One free meal, no card needed.</p></details>
+          <details><summary>Can I pause my plan?</summary><p>Yes, anytime — just message us on WhatsApp.</p></details>
+          <details><summary>What if I don't like a meal?</summary><p>Tell us and we'll replace it for free, once a month.</p></details>
+          <details><summary>How fresh is the food?</summary><p>Cooked the same morning, never frozen.</p></details>
+          <details><summary>Can I mix veg and non-veg?</summary><p>Yes. You choose your meals every week.</p></details>
+          <details><summary>Do you use refined sugar or maida?</summary><p>No.</p></details>
+          <details><summary>Do you deliver on Sundays?</summary><p>No, Monday to Saturday only.</p></details>
+          <details><summary>Is it Jain-friendly?</summary><p>Not yet — it's coming soon.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NOT READY YET ============ -->
+    <section class="section later" id="later" aria-labelledby="later-title">
+      <div class="container narrow later-inner">
+        <h2 id="later-title">Not hungry yet?</h2>
+        <p>Get the new menu on WhatsApp every Monday. One message a week, nothing else. Your free bowl will still be waiting.</p>
+        <form class="later-form" id="laterForm" novalidate>
+          <label for="laterPhone" class="visually-hidden">WhatsApp number</label>
+          <div class="phone-wrap">
+            <span class="prefix" aria-hidden="true">+91</span>
+            <input id="laterPhone" type="tel" inputmode="numeric" placeholder="WhatsApp number" maxlength="20">
+          </div>
+          <button class="btn" type="submit">Send me the menu</button>
+        </form>
+        <p class="error" id="laterPhone-error" aria-live="polite"></p>
+        <p class="later-done" id="laterDone" hidden>Done! The next menu lands on Monday. 🥗</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#top" class="logo" aria-label="FitBowl home">
+            <span class="logo-mark" aria-hidden="true"></span>FitBowl
+          </a>
+          <p>Fresh, healthy bowls that taste like a treat. Cooked the same morning, delivered across Mumbai.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#plans">Plans &amp; pricing</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3>We deliver in</h3>
+          <ul>
+            <li>Andheri</li>
+            <li>Bandra</li>
+            <li>Powai</li>
+            <li>Lower Parel</li>
+          </ul>
+          <p class="footer-note">Mon–Sat · Lunch 12–2 pm · Dinner 7–9 pm</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp us</a></li>
+            <li><a href="https://instagram.com/fitbowl" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="mailto:hello@fitbowl.in">hello@fitbowl.in</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 FitBowl, Mumbai. All rights reserved.</p>
+        <p>
+          <a href="#">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a href="#">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <span>First bowl free · No card</span>
+    <a href="#book" class="btn btn-small" data-cta="sticky" tabindex="-1">Book now</a>
+  </div>
+
+  <!-- One-time "not ready yet" nudge -->
+  <div class="nudge" id="nudge" role="dialog" aria-labelledby="nudge-title" hidden>
+    <button class="nudge-close" id="nudgeClose" aria-label="Close">×</button>
+    <p class="nudge-title" id="nudge-title">Still deciding?</p>
+    <p>Get next Monday's menu on WhatsApp — and keep your free bowl for later.</p>
+    <a href="#later" class="btn btn-small" id="nudgeGo">Send me the menu</a>
+  </div>
+
+  <div class="welcome-back" id="welcomeBack" role="status" hidden>
+    <span>👋 Welcome back! Your free bowl is still waiting.</span>
+    <a href="#book" class="btn btn-small">Claim it</a>
+    <button class="nudge-close" id="welcomeClose" aria-label="Close">×</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
