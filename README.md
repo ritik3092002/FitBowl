@@ -1,6 +1,6 @@
 # FitBowl — website
 
-**Live site:** _add your link here_  
+**Live site:** https://fitbowl-ten.vercel.app/  
 **Built with:** plain HTML, CSS and JavaScript. No framework, no build step — it opens in any browser and costs nothing to host.
 
 Hi! Here's your new site. Below is what I built, why, and what I'd do next.
