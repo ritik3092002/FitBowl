@@ -399,6 +399,7 @@ function showSuccess(data) {
   success.hidden = false;
   success.focus();
   store.set("booked", true);
+  store.set("draft", null); // booked — don't refill the form on the next visit
   hideNudges();
 }
 
