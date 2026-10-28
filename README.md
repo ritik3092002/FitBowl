@@ -83,7 +83,7 @@ Every booking also records **which Instagram ad it came from** (the `utm_source`
 
 ## Where I used AI tools
 
-I used **Claude** (Anthropic's AI assistant) in two stages:
+I used **Claude** (Anthropic's AI assistant) on the basic free plan, not a paid Pro plan, in two stages:
 
 - **Building the first version.** Claude helped me write the first version of the code and some of the copy. I then went through every part, tested the form on mobile and desktop, and changed what didn't work well. For example, the phone field originally cut off numbers pasted with "+91", and the hero picture pushed the button below the first screen on phones.
 - **Final review against the brief.** Before submitting, I asked Claude to check the site against every point in the brief. It found things I had missed, and I fixed them in small commits:
@@ -91,8 +91,6 @@ I used **Claude** (Anthropic's AI assistant) in two stages:
   - It removed placeholders that shouldn't be live: the FSSAI number, Privacy/Terms links that went nowhere, and a fake WhatsApp number.
   - It cleared the saved form after a booking, so the form doesn't fill itself in again.
   - It added the Instagram ad tracking.
-
-  It also helped me find out why one deployment didn't go live. Vercel's free plan was blocking commits that listed Claude as a co-author, so I now commit without that line.
 
 I made the final decisions on layout, content and features, tested the site, deployed it on Vercel, and I can explain and change any part of the code.
 
