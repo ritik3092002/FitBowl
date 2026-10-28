@@ -34,6 +34,9 @@ A **sticky "Book now" bar** sits at the bottom of the phone screen once the visi
 | **Mutton Keema is Fridays only** | If someone picks it as their free bowl, the date moves to the next Friday automatically, and a non-Friday date shows a clear message. |
 | **Karan's review is very long** | Showed his strongest line big, with "Read Karan's full review" to open the rest. Nothing is cut. |
 | **Plan savings** | Shown as savings compared with the Starter price (₹200 on Regular, ₹800 on Pro), with a footnote saying so. |
+| **No ratings or "bestseller" data** | I only used claims you gave me. The menu tags come from your content ("Fridays only", Karan's favourite) and the reviews are word for word. |
+
+**What I need from you before launch:** your WhatsApp business number (the chat button is built but hidden until then), FSSAI licence number, privacy policy and terms, Instagram handle and domain.
 
 ## How I handled each request
 
@@ -60,12 +63,14 @@ A **sticky "Book now" bar** sits at the bottom of the phone screen once the visi
 
 I also added a **"Tell a colleague on WhatsApp"** button after booking, because Karan's review says his whole team started ordering — office word-of-mouth is clearly how you grow.
 
+Every booking also records **which Instagram ad it came from** (the `utm_source` / `utm_campaign` / `utm_content` tags on your ad links), even if the person comes back days later to book. Once the form is connected, you'll see which ads bring real bookings, not just clicks.
+
 ## What I'd do next with one more week
 
 1. **Connect the form for real** — send bookings to a Google Sheet and your team's WhatsApp, so nobody is missed.
 2. **Real food photos** — even good phone photos in daylight will beat any illustration.
 3. **Tracking** — Meta Pixel and Google Analytics, so you can see which Instagram ads bring bookings, not just clicks.
-4. **WhatsApp chat button** — many people prefer to ask a question on WhatsApp before booking.
+4. **Switch on the WhatsApp chat button** — it's already built; it just needs your business number.
 5. **Check the pincode** — if someone types a pincode inside your areas, tell them straight away.
 6. **Speed** — host the fonts on the site itself, so the page loads even faster on mobile data.
 
@@ -73,12 +78,11 @@ I also added a **"Tell a colleague on WhatsApp"** button after booking, because 
 
 - **Nothing is actually sent yet.** Bookings and WhatsApp sign-ups only work on screen until a backend is connected.
 - **The illustrations are a stand-in.** They're better than fake stock photos, but they don't make anyone hungry the way a real photo does.
-- **The "welcome back" and saved form** work per browser. Someone who saw the ad on their phone and comes back on a laptop won't see them.
+- **The "welcome back" and saved form** work per browser. Someone who saw the ad on their phone and comes back on a laptop won't see them. The same goes for Instagram's built-in browser: it keeps its own storage, separate from Chrome or Safari.
 - **No logo yet** — the wordmark is a placeholder.
 
 ## Where I used AI tools
 
-<!-- Edit this to describe exactly how YOU used AI — be honest, it is checked in the call. -->
 I used Claude to help write and review the first version of the code and some of the copy. I then went through every part, tested the form on mobile and desktop, and changed things that didn't work well (for example, the phone field originally cut off numbers pasted with "+91", and the hero picture pushed the button below the first screen on phones).
 
 ---
