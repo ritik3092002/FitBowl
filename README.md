@@ -83,7 +83,7 @@ Every booking also records **which Instagram ad it came from** (the `utm_source`
 
 ## Where I used AI tools
 
-I used **Claude** (Anthropic's AI assistant) on the basic free plan, not a paid Pro plan, in two stages:
+I used **Claude** (Anthropic's AI assistant) in two stages:
 
 - **Building the first version.** Claude helped me write the first version of the code and some of the copy. I then went through every part, tested the form on mobile and desktop, and changed what didn't work well. For example, the phone field originally cut off numbers pasted with "+91", and the hero picture pushed the button below the first screen on phones.
 - **Final review against the brief.** Before submitting, I asked Claude to check the site against every point in the brief. It found things I had missed, and I fixed them in small commits:
