@@ -197,6 +197,19 @@ $$('input[name="diet"]').forEach(r => r.addEventListener("change", () => {
   saveDraft();
 }));
 
+// Which ad brought this visitor? Instagram ad links carry utm_* tags in the URL.
+// Saved on the first visit, so it still counts if they come back later to book.
+const AD_SOURCE = (function () {
+  const params = new URLSearchParams(location.search);
+  const fromUrl = {
+    source: params.get("utm_source"),
+    campaign: params.get("utm_campaign"),
+    content: params.get("utm_content")
+  };
+  if (fromUrl.source) { store.set("adSource", fromUrl); return fromUrl; }
+  return store.get("adSource");
+})();
+
 // Plan buttons remember which plan the person was looking at (useful for the call)
 $$("[data-plan]").forEach(btn => btn.addEventListener("click", () => { chosenPlan = btn.dataset.plan; }));
 
@@ -344,7 +357,8 @@ function send() {
     date: fields.date.value,
     slot: $('input[name="slot"]:checked').value,
     bowl: fields.bowl.value || "Chef's choice",
-    plan: chosenPlan
+    plan: chosenPlan,
+    adSource: AD_SOURCE
   };
 
   // Show a loading state on whichever button was pressed
