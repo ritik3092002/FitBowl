@@ -568,7 +568,7 @@ button, input, select { font: inherit; color: inherit; }
 /* Social pills */
 .socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .socials a {
-  display: flex; gap: 5px;
+  display: flex; align-items: center; gap: 6px;
   padding: 8px 14px; border-radius: 999px; font-size: .9rem; font-weight: 600;
   background: rgba(255, 246, 233, .08); border: 1px solid rgba(255, 246, 233, .16);
   color: var(--cream); text-decoration: none;
@@ -609,26 +609,17 @@ button, input, select { font: inherit; color: inherit; }
 .footer-bottom a { color: inherit; text-decoration: none; }
 .footer-bottom a:hover { color: var(--cream); text-decoration: underline; }
 
-/* Back-to-top button */
-.to-top {
-  position: absolute; right: 16px; top: 470px; width: 44px; height: 44px;
-  display: grid; place-items: center; border-radius: 50%;
-  background: var(--turmeric); color: var(--ink); font-weight: 800; font-size: 20px;
-  text-decoration: none; box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
-  transition: transform .2s ease;
-}
-.to-top:hover { transform: translateY(-4px); }
-
 /* ---------- Floating WhatsApp button ---------- */
 .wa-float {
   position: fixed; z-index: 45; left: 14px; bottom: calc(84px + env(safe-area-inset-bottom, 0px));
   width: 52px; height: 52px; border-radius: 50%;
-  display: grid; place-items: center; font-size: 26px; text-decoration: none;
+  display: grid; place-items: center; text-decoration: none;
   background: #25D366; color: #fff;
   box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
   transition: transform .2s ease;
 }
 .wa-float:hover { transform: scale(1.08); }
+.wa-float svg { width: 30px; height: 30px; }
 
 /* ---------- Sticky CTA (mobile) ---------- */
 .sticky-cta {
