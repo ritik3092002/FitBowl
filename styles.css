@@ -41,10 +41,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- NEW: Animated body background ----------
+/* ---------- Animated body background ----------
    A fixed layer behind everything: warm gradient + dotted pattern
    that slowly drifts. Sections with their own colour (reviews,
-   booking, footer) simply cover it. */
+   booking, footer) simply cover it.
+   The dots drift using transform (cheap on phones) instead of
+   animating background-position (repaints every frame). */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background:
@@ -55,18 +57,19 @@ body::before {
     var(--cream);
 }
 body::after {
-  content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  content: ""; position: fixed; inset: -44px; z-index: -2; pointer-events: none;
   background-image:
     radial-gradient(rgba(232, 69, 44, .16) 2px, transparent 2.5px),
     radial-gradient(rgba(31, 110, 67, .12) 2px, transparent 2.5px);
   background-size: 44px 44px, 44px 44px;
   background-position: 0 0, 22px 22px;
   animation: dots-drift 40s linear infinite;
+  will-change: transform;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 100%);
           mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 100%);
 }
 @keyframes dots-drift {
-  to { background-position: 44px 44px, 66px 66px; }
+  to { transform: translate(44px, 44px); }
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -98,8 +101,9 @@ button, input, select { font: inherit; color: inherit; }
 .section-head h2 { font-size: clamp(30px, 7vw, 46px); }
 .section-sub { color: var(--muted); margin-top: 12px; max-width: 560px; }
 
-/* ---------- NEW: Floating background stickers ----------
-   Emoji stickers drifting around the whole page (fixed, behind content). */
+/* ---------- Floating background stickers ----------
+   Emoji stickers drifting around the whole page (fixed, behind content).
+   Hidden on phones (see bottom of file) to save battery and keep text clear. */
 .bg-stickers {
   position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
 }
@@ -160,6 +164,10 @@ button, input, select { font: inherit; color: inherit; }
   font-weight: 700; color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
 }
 
+/* White button (used on coloured backgrounds, e.g. footer CTA) */
+.btn-light { background: #fff; color: var(--chili); border-color: #fff; box-shadow: 0 6px 16px rgba(0, 0, 0, .18); }
+.btn-light:hover { background: var(--turmeric); border-color: var(--turmeric); color: var(--ink); }
+
 /* Shine sweep on big buttons */
 .btn-big::after {
   content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
@@ -198,12 +206,11 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; isolation: isolate; padding: 20px 0 40px; overflow: hidden; }
-/* Soft colour blobs behind the hero */
-.hero::before, .hero::after {
+/* Soft colour blob behind the hero */
+.hero::before {
   content: ""; position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); opacity: .55;
+  width: 320px; height: 320px; background: var(--turmeric); top: -80px; right: -100px;
 }
-.hero::before { width: 320px; height: 320px; background: var(--turmeric); top: -80px; right: -100px; }
-.hero::after  { width: 260px; height: 260px; background: #FFC9B8; bottom: -60px; left: -80px; }
 
 .hero-inner { display: grid; gap: 24px; }
 .hero h1 { font-size: clamp(38px, 10.5vw, 68px); font-weight: 800; }
@@ -230,7 +237,7 @@ button, input, select { font: inherit; color: inherit; }
 .sticker-a small { color: var(--ink); }
 .sticker-b { bottom: 6%; left: 0; transform: rotate(-5deg); animation-delay: -2s; }
 
-/* ---------- NEW: extra hero stickers ---------- */
+/* ---------- Extra hero stickers ---------- */
 .sticker-c {
   top: 2%; left: -2%;
   display: flex; align-items: center; gap: 8px;
@@ -531,6 +538,7 @@ button, input, select { font: inherit; color: inherit; }
   position: relative;
   background: #1F1A17;
   color: var(--cream);
+  margin-top: 40px; /* room for the back-to-top button */
   /* extra bottom space on phones so the sticky CTA never covers the last line */
   padding: 44px 0 calc(90px + env(safe-area-inset-bottom, 0px));
 }
@@ -539,11 +547,34 @@ button, input, select { font: inherit; color: inherit; }
   background: linear-gradient(90deg, var(--chili), var(--turmeric), var(--leaf));
 }
 
+/* Call-to-action band */
+.footer-cta {
+  display: flex; flex-direction: column; gap: 18px; align-items: flex-start;
+  margin-bottom: 44px; padding: 26px 22px; border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 182, 39, .45), transparent 45%),
+    var(--chili);
+  color: #fff; box-shadow: 0 18px 40px rgba(232, 69, 44, .3);
+}
+.footer-cta h2 { font-size: clamp(26px, 6vw, 38px); }
+.footer-cta p { margin-top: 6px; opacity: .92; }
+
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; }
 .footer-brand { grid-column: 1 / -1; }
 
 .footer .logo { color: var(--cream); font-size: 1.4rem; }
 .footer-brand p { margin: 14px 0 0; max-width: 32ch; color: rgba(255, 246, 233, .72); line-height: 1.6; }
+
+/* Social pills */
+.socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.socials a {
+  display: flex; gap: 5px;
+  padding: 8px 14px; border-radius: 999px; font-size: .9rem; font-weight: 600;
+  background: rgba(255, 246, 233, .08); border: 1px solid rgba(255, 246, 233, .16);
+  color: var(--cream); text-decoration: none;
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+.socials a:hover, .socials a:focus-visible { background: var(--chili); border-color: var(--chili); transform: translateY(-2px); }
 
 .footer-col h3 {
   margin: 0 0 14px;
@@ -561,6 +592,14 @@ button, input, select { font: inherit; color: inherit; }
 }
 .footer-note { margin-top: 14px; font-size: .85rem; color: rgba(255, 246, 233, .55); }
 
+/* Delivery areas as small tags */
+.footer-col .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.area-tags li {
+  padding: 4px 12px; border-radius: 999px; font-size: .88rem;
+  background: rgba(255, 182, 39, .14); color: var(--turmeric);
+}
+.footer-perks li { font-size: .92rem; }
+
 .footer-bottom {
   margin-top: 40px; padding-top: 20px;
   border-top: 1px solid rgba(255, 246, 233, .14);
@@ -569,6 +608,27 @@ button, input, select { font: inherit; color: inherit; }
 }
 .footer-bottom a { color: inherit; text-decoration: none; }
 .footer-bottom a:hover { color: var(--cream); text-decoration: underline; }
+
+/* Back-to-top button */
+.to-top {
+  position: absolute; right: 16px; top: 470px; width: 44px; height: 44px;
+  display: grid; place-items: center; border-radius: 50%;
+  background: var(--turmeric); color: var(--ink); font-weight: 800; font-size: 20px;
+  text-decoration: none; box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+  transition: transform .2s ease;
+}
+.to-top:hover { transform: translateY(-4px); }
+
+/* ---------- Floating WhatsApp button ---------- */
+.wa-float {
+  position: fixed; z-index: 45; left: 14px; bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 26px; text-decoration: none;
+  background: #25D366; color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+  transition: transform .2s ease;
+}
+.wa-float:hover { transform: scale(1.08); }
 
 /* ---------- Sticky CTA (mobile) ---------- */
 .sticky-cta {
@@ -615,6 +675,7 @@ button, input, select { font: inherit; color: inherit; }
   .nudge { left: auto; right: 20px; bottom: 20px; width: 360px; }
   .welcome-back { left: 50%; right: auto; transform: translateX(-50%); width: max-content; max-width: calc(100% - 20px); }
   .footer-bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+  .footer-cta { flex-direction: row; align-items: center; justify-content: space-between; padding: 32px 36px; }
 }
 
 @media (min-width: 900px) {
@@ -639,15 +700,17 @@ button, input, select { font: inherit; color: inherit; }
   .sticker-e { left: -6%; }
   .emoji-pop { font-size: 38px; }
 
+  .wa-float { bottom: 24px; left: 20px; }
+
   .footer { padding: 56px 0 calc(24px + env(safe-area-inset-bottom, 0px)); }
   .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; }
   .footer-brand { grid-column: auto; }
   .footer-bottom { margin-top: 44px; }
 }
 
-/* Phones: calmer background stickers so text stays easy to read */
+/* Phones: no floating background emoji, so text stays easy to read */
 @media (max-width: 639px) {
-  .bg-sticker { opacity: .35; }
+  .bg-stickers { display: none; }
   .sticker-e { left: -2%; width: 70px; height: 70px; font-size: 22px; }
 }
 
